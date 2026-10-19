@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "VideoMenu",
+  "version": "0.2.0",
+  "description": "Keep the Mac menu bar visible in Chromium browsers, except during full-screen video. Requires the VideoMenu Mac helper.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwpoVm+Fo5AlEXTsTjl64/1aZKjrDf8ZGcZnjJrtqTP+hqnfe0fJsZ6q7K2Mk/+PfmvMmKuQao09GtKeyi7P2Fi+euC8lyFtyNCn7Hwf/bqgqRYgLdHEDaJFLHVGzJU34jiuftuhSBqhKjG7oAvEg2Lf52fKEDbwQbHW2BPwrLdvb8xcjm2ZYUx40438mj8ueGo17c2YBASH6ckRAXI6yul5apvwlU2NFAgn2iRqNfpEEOrmx5y5m0ug2OqSE+/Bq7c43VXmxV5NTsZ5HcvQd9m1zjEKy8cWePcefNR81cqEefCNDaUx6DvJNv8HANoMR+IT7ziaj+8cHVn7AkR1FAwIDAQAB",
+  "permissions": [
+    "nativeMessaging",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "VideoMenu: click to pause or resume",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
