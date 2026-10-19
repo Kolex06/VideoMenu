@@ -8,7 +8,9 @@ Keep the macOS menu bar visible while browsing in full screen, and hide it durin
 
 1. [Download the experimental Mac helper (Apple Silicon)](https://github.com/Kolex06/VideoMenu/raw/refs/heads/main/downloads/VideoMenu-macOS-arm64.zip), extract it, and keep the VideoMenu folder in a permanent location.
 2. Open VideoMenu.app and choose Install Helper. It registers a local native-messaging host with the configured browsers. This is an ad-hoc signed developer build, not notarized; if macOS blocks it, build it locally from the source instead using Xcode Command Line Tools and `bash build.sh`.
-3. Install [VideoMenu from the Chrome Web Store](https://chromewebstore.google.com/detail/videomenu/jklgafbeefjgjolkggngbgkaefgmnolb). This link becomes available after Google approves and publishes it. For development, load the `extension` folder at `chrome://extensions` with Developer mode enabled.
+3. For installation now, [download the extension ZIP](https://github.com/Kolex06/VideoMenu/raw/refs/heads/main/downloads/VideoMenu-extension-0.2.0.zip), extract it, open `chrome://extensions`, enable Developer mode, click **Load unpacked**, and select the extracted **VideoMenu-extension** folder. Keep that folder in place.
+
+   Alternatively, install [VideoMenu from the Chrome Web Store](https://chromewebstore.google.com/detail/videomenu/jklgafbeefjgjolkggngbgkaefgmnolb). This link becomes available after Google approves and publishes it. For development, load the `extension` folder at `chrome://extensions` with Developer mode enabled.
 4. Refresh existing video tabs. Use the video player's full-screen button.
 
 Do not move the helper folder after installing; rerun the installer if its location changes. The prebuilt helper is Apple Silicon only. Intel Macs can build from source with `bash build.sh`.
